@@ -7,11 +7,11 @@ import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import  path  from "path";
-import { fileURLToPath } from "url";
+// import  path  from "path";
+// import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 8800
 
 
@@ -44,11 +44,11 @@ app.use("/api/rooms", roomsRoute);
 
 // static files
 
-app.use(express.static(path.join(__dirname, "./admin/build")));
+// app.use(express.static(path.join(__dirname, "./admin/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./admin/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./admin/build/index.html"));
+// });
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
